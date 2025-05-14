@@ -7,6 +7,10 @@ RUN apt-get update && apt-get install -y \
     cmake \
     ninja-build
 
+RUN apt install -y git cmake g++ g++-10 llvm-14-dev libc++1-14 libc++abi1-14
+RUN apt install -y nvidia-cuda-toolkit xorg-dev libxcb-shm0 libglu1-mesa-dev python3-dev clang libc++-dev libc++abi-dev libsdl2-dev ninja-build \
+    libxi-dev libtbb-dev libosmesa6-dev libudev-dev autoconf libtool
+
 RUN curl -L --output Open3D-0.18.0.tar.gz https://github.com/isl-org/Open3D/archive/refs/tags/v0.18.0.tar.gz && \
     tar xfz Open3D-0.18.0.tar.gz
 
