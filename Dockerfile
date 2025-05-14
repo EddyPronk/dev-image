@@ -4,7 +4,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y \
     curl \
-    cmake
+    cmake \
+    ninja-build
 
 RUN curl -L --output Open3D-0.18.0.tar.gz https://github.com/isl-org/Open3D/archive/refs/tags/v0.18.0.tar.gz && \
     tar xfz Open3D-0.18.0.tar.gz
