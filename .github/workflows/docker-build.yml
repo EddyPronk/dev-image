@@ -1,0 +1,23 @@
+name: Build Docker Image
+
+on:
+  push:
+    branches:
+      - main # Adjust this to the branch you want to trigger the action
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Build the Docker image
+      - name: Build Docker image
+        run: |
+          docker build -t dev-image:latest .
